@@ -5,7 +5,19 @@ const signupTemplateCopy=require('../models/signupmodels')
 
 router.post('/signup',(request,response)=>{
     const signedUpUser=new signupTemplateCopy({
+        fullName:request.body.fullName,
+        username:request.body.username,
+        email:request.body.email,
+        password:request.body.password,
+
         
+    })
+    signedUpUser.save()
+    .then(date=>{
+        response.json(data)
+    })
+    .catch(error=>{
+        response.json(error)
     })
 })
 
