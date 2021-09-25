@@ -4,13 +4,11 @@ const signupTemplateCopy=require('../models/signupmodels')
 
 
 router.post('/signup',(request,response)=>{
-    const signedUpUser=new signupTemplateCopy({
+    const signedUpUser = new signupTemplateCopy({
         fullName:request.body.fullName,
         username:request.body.username,
         email:request.body.email,
-        password:request.body.password,
-
-        
+        password:request.body.password   
     })
     signedUpUser.save()
     .then(date=>{
@@ -21,4 +19,5 @@ router.post('/signup',(request,response)=>{
     })
 })
 
-module.exports=router
+
+module.exports = router
